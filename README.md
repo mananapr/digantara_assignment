@@ -30,13 +30,17 @@ Multiple practices can be adopted to rectify scalability issues.
 
 1. **Partitioning** can be adopted for horizontal scaling. This would significantly decrease the storage requirements (per node) and speed up queries.\
 The effectiveness of this technique has been tested in `3_benchmark.py`.\
+\
 This code creates a partitioned table called `object_hist_paritioned`. Partition has been created on `creat_ts` at a monthly level.\
 Running a simple `SELECT DISTINCT` query for *creat_ts='2022-02-24 04:00:00+00'* takes ~650ms on the unpartitioned table and around ~150ms on the partitioned table.\
 The difference is not huge since this was done a fairly small dataset but this adds up significantly while working on bigger tables (2GB+).\
 *These numbers were calculated through `EXPLAIN ANALYZE` statement in PostgreSQL.*\
 \
 Additionally, partitioning can also be done on user data basis their names or basis location/continent.
+
 2. If **Caching** hasn't been setup then something like *redis* can be used for storing frequently accessible data.
+
 3. PostgreSQL automatically sets up **Indexing** for columns with UNIQUE constrains. Indexes can be created for other columns to speed up queries.\
 The tradeoff is that disk IO would become slower. (Insert, Update, Delete)
+
 4. Level of data redundancy can also be increased by opting for a more *Denormalized Schema*. This would be costly on storage but could potentially speed up query execution.
