@@ -2,7 +2,7 @@ import logging
 import psycopg2
 
 logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger('1_init')
+logger = logging.getLogger('2_sql_query')
 
 logger.info('[*] Starting 2_sql_query.py')
 
@@ -14,8 +14,6 @@ except:
     logger.error("[!] Connection Failed")
 
 
-
-# we use a context manager to scope the cursor session
 with conn.cursor() as curs:
 
     try:

@@ -3,5 +3,6 @@ RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev && pip install
 WORKDIR /digantara
 COPY 1_init.py .
 COPY 2_sql_query.py .
+COPY 3_benchmark.py .
 COPY start.sh .
 CMD ./start.sh
