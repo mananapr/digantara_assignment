@@ -22,10 +22,13 @@ services:
     pgadmin:
       image: dpage/pgadmin4
       ports:
-        - "80:80"
+        - "8080:80"
       environment:
-        PGADMIN_DEFAULT_EMAIL: manans@tutanota.com
-        PGADMIN_DEFAULT_PASSWORD: manish
+        PGADMIN_DEFAULT_EMAIL: digantara@postgres.com
+        PGADMIN_DEFAULT_PASSWORD: postgis
+      volumes:
+        - ./servers.json:/pgadmin4/servers.json
+        - ./pgpass:/pgpass
     digantara:
       image: digantara
       volumes:

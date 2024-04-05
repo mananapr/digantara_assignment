@@ -6,6 +6,15 @@ Setup and intial execution is handled by the Makefile.
 
 **Note:** The extracted `Assignment data` folder should be present in the same directory.
 
+Secrets have been included in the git repo since it's all dummy data.
+- **PosgreSQL DB:** digantara
+- **PosgreSQL User:** postgres
+- **PosgreSQL Password:** postgis
+- **PgAdmin Login:** digantara@postgres.com
+- **PgAdmin Password:** postgis
+
+PgAdmin can be accessed at `localhost:8080` to check the tables.
+
 ---
 
 ## Task 1: Schema Design
