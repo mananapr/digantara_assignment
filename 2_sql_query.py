@@ -43,7 +43,7 @@ with conn.cursor() as curs:
         SELECT * FROM public.task_2_a_input
         """)
         random_points = curs.fetchall()
-        logger.info(f'[*] Random Points Selected: {random_points}')
+        logger.info(f'[*] Random Points Selected: {[(x[0],x[1]) for x in random_points]}')
 
         ## GET ALL THE OBJECTS WITHIN THE PENTGAON FORMED BY THE 5 OBJECTS SELECTED EARLIER (OUTPUT TABLE FOR TASK 2 A)
         polygon_str = ''
