@@ -106,7 +106,7 @@ try:
         # Add object id to each csv
         dir_path = os.path.dirname(os.path.realpath(__file__))
         csv_files = glob.glob('Assignment data/*.csv')
-        logger.info(f'[*] Found {len(csv_files)} CSV files')
+        logger.info(f'[*] Found {len(csv_files)} CSV files. Ingestion may take upto 3 minutes...')
 
         start_time = time.time()
         for f in csv_files:
